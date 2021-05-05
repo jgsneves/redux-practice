@@ -12,3 +12,7 @@ interface ICartItem {
 interface ICartState {
     items: ICartItem[];
 }
+
+interface IState {
+    cart: ICartState;
+}
