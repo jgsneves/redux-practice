@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { ICartItem, IState } from '../../declarate';
 
 export const Cart: React.FC = () => {
     const cart = useSelector<IState, ICartItem[]>(state => state.cart.items);

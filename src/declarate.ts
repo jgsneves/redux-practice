@@ -1,0 +1,34 @@
+import { addProductToCartRequest } from "./store/modules/cart/actions";
+
+export enum ActionTypes {
+    addProductToCartRequest = 'ADD_PRODUCT_TO_CART_REQUEST',
+    addProductToCartSuccess = 'ADD_PRODUCT_TO_CART_SUCCESS',
+    addProductToCartFailure = 'ADD_PRODUCT_TO_CART_FAILURE',
+}
+
+export interface IProduct {
+    id: number;
+    title: string;
+    price: number;
+}
+
+export interface ICartItem {
+    product: IProduct;
+    quantity: number;
+}
+
+export interface ICartState {
+    items: ICartItem[];
+    failedStockCheck: number[];
+}
+
+export interface IState {
+    cart: ICartState;
+}
+
+export interface IStockResponse {
+    id: number;
+    quantity: number;
+}
+
+export type CheckProductStockRequest = ReturnType<typeof addProductToCartRequest>;
